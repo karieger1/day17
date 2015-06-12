@@ -37,3 +37,7 @@ a:hover, a:active {
 	width: 100%;
 
 }
+
+#play-game, #leaderboard, #settings {
+    display:hidden;
+}
