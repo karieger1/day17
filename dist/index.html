@@ -1,56 +1,68 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Game?</title>
-<link rel="stylesheet" type="text/css" media="all" href="style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
+
 <body>
-		<div>
-			 <div id="loader">Loading...</div>
+	<div id="loading-message">
+		 <span id="loader">Loading...</span>
+	</div>
+
+	<main> 
+
+<!-- NAV BAR -->
+
+	<div class="navbar">
+
+		<ul class="nav nav-tabs">
+
+			<li role="presentation" class="active"><a href="#home">Home</a></li>
+			
+			<li role="presentation"><a href="#play">Play</a></li>
+
+			<li role="presentation"><a href="#leaders">Leaderboard</a></li>
+
+			<li role="presentation"><a href="#settings">Settings</a></li>
+
+		</ul>
+	</div>
+
+
+		<!-- Tabs -->
+		<div id="home">
+			<img src="http://www.fabulouslyentertaining.com/wp-content/uploads/2014/07/dragon-255131_640.png"><br />
+			<h2>Dragon game does not have dragons!</h2>
 		</div>
+
+
+		<div id="game-screen" class="viewer"><img src="http://cdn.arstechnica.net/wp-content/uploads/2013/04/snes-640x476.png"/></div>
+
+		<div id="leaders" class="viewer">
+			<h2>the champions:</h2>
+						
+				<p>lizard:  4 trillion</p>
+				<p>basketball:  27</p>
+				<p>t-rex:  70 million</p>
+				<p>spaghetti:  2</p>
+				<p>a shark:  78,435</p>
+		</div>
+		
+		<div id="settings" class="viewer">
+			<center><h2>Settings</h2></center>
+			<p><center>Fool -- you cannot change the settings in this game. Off with you!</center></p>
+		</div>
+
+	</main>
 	
 
-		<ul class="navbar">
-			<li><a href="#homebutton">home</a></li>
-			<li><a href="#playbutton">play</a></li>
-			<li><a href="#leaderbutton">leaderboard</a></li>
-			<li><a href="#settingsbutton">settings</a></li>
-		</ul>
-		
-	<main>
-		<section id="game">
-			<div id="play-game" class="stuff"><img src="http://cdn.arstechnica.net/wp-content/uploads/2013/04/snes-640x476.png"/></div>
-		</section>
-
-		<section id="leaders">
-
-				<div id="leaderboard" class="stuff">
-					<h2>the champions:</h2>
-						
-						<p>lizard:  4 trillion</p>
-						<p>basketball:  27</p>
-						<p>t-rex:  70 million</p>
-						<p>spaghetti:  2</p>
-						<p>a shark:  78,435</p>
-				</div>
-		</section>
-
-		<section id="settings">		
-				<div id="settings" class="stuff">
-					<h2>Settings</h2>
-				</div>
-		</section>
-	</main>
-
-
-
-
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
-<script type="text/javascript" src="bower_components/backbone/backbone-min.js"></script>
-<script type="text/javascript" src="scripts/main.js"></script>
-
-
-
+	<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="bower_components/backbone/backbone-min.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

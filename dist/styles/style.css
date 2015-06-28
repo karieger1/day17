@@ -1,6 +1,6 @@
 
 /*top navigation bar*/
-#navbar {
+.navbar {
 	margin: 0 auto;
 }
 ul {
@@ -32,12 +32,12 @@ a:hover, a:active {
     background-color: turquoise;
 }
 
-.top {
+/*.top {
 	height: 50px;
 	width: 100%;
 
-}
+}*/
 
-#play-game, #leaderboard, #settings {
+/*#game-screen, #leaderboard, #settings, .navbar {
     display:hidden;
-}
+}*/

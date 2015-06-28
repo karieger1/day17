@@ -1,115 +1,52 @@
-// $(window).load(function() {
-// 			$("main").hide();
-// 			$("#loader").delay(4000).fadeOut("slow");
-// 			$("main").delay(4000).fadeIn("slow");
-// 		});
+$(window).load(function() {
+		$('main').hide();
+		$('#loader').delay(4000).fadeOut('fast');
+		$('main').delay(4000).fadeIn('fast');
+	});
 
-// $(document).on("ready",(function() {
-
-// 		var routerConfig = Backbone.Router.extend({
-// 			routes: {
-// 				"":              "goHome",
-// 				"home":          "goHome",
-// 				"play":          "goPlay",   
-// 				"leaderboard":   "goLeaderboard",   
-// 				"settings":      "goSettings"
-// 			},
-		
-
-
-// 		$("#homebutton li").click(function() {
-// 			$("#navbar").show();
-// 			$(main).hide();
-// 		});
-
-// 		$("#playbutton li").click(function() {
-// 			$("#game").show();
-// 		});
-
-// 		$("#leaderbutton li").click(function() {
-// 			$("#leaders").show();
-// 		});
-
-// 		$("#settingsbutton li").click(function() {
-// 			$("#settings").show();
-// 		});
-
-// 	}); 
-
-// 	Backbone.history.start()
+$(document).on('ready', function(){
 	
-// }));
-
-
-$(document).ready(function () {
-	
-	$(window).load(function() {
-	        $('main').hide();
-	        $('nav').show();
-	        $('#game').hide();
-	        $('#loader').delay(4000).fadeOut('fast');
-	        
-	    });
-
-	$('#playbutton li').click(function () {
-		window.location.href = "#play";
-		
-		});
-
-	$('#leaderbutton li').click(function () {
-		window.location.href = "#leader";
-		
-		});
-
-	$('#settingsbutton li').click(function () {
-		window.location.href = "#settings";
-		
-		});
-
-	var routerConfig = {
+	var myRouter = Backbone.Router.extend({
 		routes: {
-			'': 'menu',
-			'menu': 'menu',
-			'play': 'play',
-			'leader': 'leaderboard',
-			'settings': 'settings',
-	},
+			'': 				'home',
+			'home': 			'home',
+			'play':				'playGame',
+			'leaders': 			'leaderBoard', 
+			'settings': 		'settingsPage', 
 
-		menu: function() {
-			
-			$('main').hide();
-			$('.navbar').show();
 		},
 
-		play: function() {
-			
+		home: function() {
 			$('.navbar').show();
-			$('#game').show();
-			$('#leaders').hide();
-			$('#settings').hide();
-		},
+			$('.viewer').hide();
+			
+		}, 
+
+		playGame: function() {
+			$('.viewer').hide();
+			$('.navbar').show(); 
+			$('#game-screen').show(); 
+			$('#home').hide();
+		}, 
 
 		leaderBoard: function() {
-		
+			$('.viewer').hide();
 			$('.navbar').show();
 			$('#leaders').show();
-			$('#settings').hide();
-			$('#game').hide();
-		},
+			$('#home').hide();
 
-		settings: function() {
-		
+		}, 
+
+		settingsPage: function() {
+			$('.viewer').hide();
 			$('.navbar').show();
 			$('#settings').show();
-			$('#game').hide();
-			$('#leaders').hide();
-		},
-	};
+			$('#home').hide();
+		}
 	
+	});
 
-	var app = Backbone.Router.extend(routerConfig);
+var router = new myRouter();
+Backbone.history.start();
 
-	var myRouter = new app();
-	Backbone.history.start();
-
-}); 
+});
